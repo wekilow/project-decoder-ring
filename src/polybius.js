@@ -11,17 +11,17 @@ const alphabet = [
 
 function polybiusEncode(input) {
   let result = "";
-  for(let k = 0; k < input.length; k++) {
-    if(input[k].includes(" ")){
-      result += input[k];
+  for(let inputChar = 0; inputChar < input.length; inputChar++) {
+    if(input[inputChar].includes(" ")){
+      result += input[inputChar];
     };
-    for(let i = 0; i < alphabet.length; i++) {
-      let match = alphabet[i];
-      for(let j = 0; j < match.length; j++){
-        if(match[j].toLowerCase().includes(input[k].toLowerCase())) {
-          result += j + 1;
-          result += i + 1;
-          // console.log(j+1, i+1)
+    for(let alphArr = 0; alphArr < alphabet.length; alphArr++) {
+      let match = alphabet[alphArr];
+      for(let alphLett = 0; alphLett < match.length; alphLett++){
+        if(match[alphLett].toLowerCase().includes(input[inputChar].toLowerCase())) {
+          result += alphLett + 1;
+          result += alphArr + 1;
+          // console.log(alphLett+1, alphArr+1)
         } 
       }
     }
